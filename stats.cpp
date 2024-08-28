@@ -1,5 +1,6 @@
 #include "stats.h"
 #include <algorithm>
+#include <numeric>
 
 Statistics::Stats Statistics::ComputeStatistics(const std::vector<float>& vec) {
     //Implement statistics here
@@ -8,16 +9,7 @@ Statistics::Stats Statistics::ComputeStatistics(const std::vector<float>& vec) {
 	var.max = *std::max_element(vec.begin(), vec.end());
 	var.min = *std::min_element(vec.begin(), vec.end());
 
-	float sum=0;
-	int count = 0;
-	for (auto itr:vec)
-	{
-		sum += itr;
-		count++;
-	}
-
-
-	var.average = sum/count;
+	var.average = std::accumulate(vec.begin(), vec.end(), 0.0 / vec.size());
 	
 	return var;
 
