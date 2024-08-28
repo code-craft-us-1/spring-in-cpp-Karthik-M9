@@ -1,12 +1,23 @@
 #include "stats.h"
+#include <algorithm.h>
 
 Statistics::Stats Statistics::ComputeStatistics(const std::vector<float>& vec) {
     //Implement statistics here
 	Statistics::Stats var;
 	
-	var.average = 0;
-	var.max = 0;
-	var.min = 0;
+	var.max = *std::max_element(vec.begin(), vec.end());
+	var.min = *std::min_element(vec.begin(), vec.end());
+
+	float sum;
+	count = 0;
+	for (auto itr:vec)
+	{
+		sum += itr;
+		count++;
+	}
+
+
+	var.average = sum/count;
 	
 	return var;
 
