@@ -14,3 +14,8 @@ Statistics::Stats Statistics::ComputeStatistics(const std::vector<float>& vec) {
 	return var;
 
 }
+
+int main()
+{
+	return 0;
+}
