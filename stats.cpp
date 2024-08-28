@@ -8,7 +8,7 @@ Statistics::Stats Statistics::ComputeStatistics(const std::vector<float>& vec) {
 	var.max = *std::max_element(vec.begin(), vec.end());
 	var.min = *std::min_element(vec.begin(), vec.end());
 
-	float sum;
+	float sum=0;
 	int count = 0;
 	for (auto itr:vec)
 	{
