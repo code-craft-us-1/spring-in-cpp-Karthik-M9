@@ -6,6 +6,11 @@ Statistics::Stats Statistics::ComputeStatistics(const std::vector<float>& vec) {
     //Implement statistics here
 	Statistics::Stats var;
 	
+	if (vec.size() == 0)
+	{
+		return var;
+	}
+
 	var.max = *std::max_element(vec.begin(), vec.end());
 	var.min = *std::min_element(vec.begin(), vec.end());
 
