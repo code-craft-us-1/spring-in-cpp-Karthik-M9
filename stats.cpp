@@ -9,7 +9,7 @@ Statistics::Stats Statistics::ComputeStatistics(const std::vector<float>& vec) {
 	var.min = *std::min_element(vec.begin(), vec.end());
 
 	float sum;
-	count = 0;
+	int count = 0;
 	for (auto itr:vec)
 	{
 		sum += itr;
